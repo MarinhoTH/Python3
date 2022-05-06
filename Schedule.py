@@ -2,9 +2,8 @@ import schedule
 import time
 import pyautogui as x
 from time import sleep
+
 def job():
-    print("I'm working...")
-def boring():
     x.click(-559,716) # clicar no video
     sleep(1)
     x.click(-180,809) # ir pro final do video
@@ -23,7 +22,7 @@ schedule.every(5).to(10).minutes.do(job)
 schedule.every().monday.do(job)
 schedule.every().wednesday.at("13:15").do(job)
 schedule.every().day.at("07:44").do(job)'''
-schedule.every(15).seconds.do()
+schedule.every(15).seconds.do(job)
 while True:
     schedule.run_pending()
     time.sleep(1)
