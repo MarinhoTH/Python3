@@ -28,7 +28,7 @@ elif opção == 2:
 
 
 elif opção == 3:
-    ranking()
+    stats()
     input('>> Pressione ENTER para voltar')   
 
 
