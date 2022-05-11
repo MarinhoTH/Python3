@@ -1,7 +1,7 @@
 #Funções
 
-def linha(tamanho=30):
-    print('-=-' * tamanho)
+def linha(tamanho=80, tipo='-=-'):
+    print(tipo * tamanho)
 
 
 def leiaInt(msg):
