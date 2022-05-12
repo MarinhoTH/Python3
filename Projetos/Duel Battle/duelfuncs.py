@@ -116,6 +116,8 @@ def battle(type):
 
     Boss = choice(BossList)
     bosspower= 2
+    bossvitality = 2
+    bossstamina = 2
     print(f'\nYou will face {Boss} in your battle.')
 
 
@@ -127,6 +129,10 @@ def battle(type):
     
     if statpicked == 1 :
         print('victory') if power>bosspower else print('defeat')
+    if statpicked == 2 :
+        print('victory') if vitality>bossvitality else print('defeat')
+    if statpicked == 3 :
+        print('victory') if stamina>bossstamina else print('defeat')
         
    
     else:

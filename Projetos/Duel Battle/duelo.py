@@ -1,6 +1,5 @@
 from duelfuncs import *
 
-
 input(''' 
 Warning!
 
