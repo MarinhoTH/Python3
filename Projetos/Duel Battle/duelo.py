@@ -2,36 +2,13 @@ from duelfuncs import *
 
 
 input(''' 
-Atenção!
+Warning!
 
-Para uma melhor visualização, MAXIMIZE a janela do seu terminal!
->>Pressione ENTER para continuar  ''')
+For a otimized experience, maximize your terminal window
 
+>>Press ENTER to continue  ''')
 
 menu()
 
-opção= int(input('>> Digite uma opção: '))
 
-
-if opção == 0:
-    print('Finished')
-
-
-elif opção == 1:
-    newgame()
-    playagain()
-
-
-elif opção == 2:
-    rules()
-    input('>> Pressione ENTER para voltar')
-
-
-elif opção == 3:
-    stats()
-    input('>> Pressione ENTER para voltar')   
-
-
-else:
-    print('Selecione uma opção válida')
     

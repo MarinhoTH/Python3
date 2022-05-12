@@ -1,69 +1,16 @@
-def menu():
-    print('-' *50 )
-    print(f'|{"Main Menu":^48}|')
-    print('-' *50 )
-    print(f'|{"     1. New Game":<48}|')
-    print(f'|{"     2. Game Rules":<48}|')
-    print(f'|{"     3. Classes":<48}|')
-    print(f'|{"     0. Quit":<48}|')
-    print('-' *50 )
+from random import choice
+BossList = ['Calanthir', 'Eredin','Geralt','Vesemir']
 
 
 def rules():
     print('''
 *Instructions*
 
-You will fight a boss selected randomly.
-
-You can choose your character class and each type of class have different attributes and can be better to fight some bosses.
-
-Every round you will select a action to fight the boss.
-
-Whoever gets to 0 health, lose''')
+Super trunfo''')
 
 
 def stats():
-    print('''
-*Stats*
-
-Attack: Damage per hit
-Health: Life
-Stamina: Hits per Round
-
-
-Fighter:
-
-health: 150
-attack: 10
-stamina: 1
-
-Mage:
-
-health: 100
-attack: 5
-stamina: 3
-
-Gunslinger:
-
-health: 100
-attack: 6
-stamina: 2
-
-Beast:
-
-health: 200
-attack: 5
-stamina: 1
-
-
-Thunder King(secret):
-
-health: 200
-attack: 10
-stamina:3
-
-
-''')
+    print('')
 
 
 def playagain():
@@ -72,72 +19,122 @@ def playagain():
         answer = pick[0]
         if answer == 'y':
             menu()
-        elif answer== 'n':
+            break
+        elif answer == 'n':
             print('Game Completed!')
             break
         else:
             print("Choose a valid option")
 
 
-def classtats(type):
-    if type=='fighter':
-        print('''
-You selected Fighter!
 
-health: 150
-attack: 10
-stamina: 1
-''')
-    
-    if type=='mage':
-        print('''
-You selected Mage!
+def menu():
+    while True:
+        print('-' *50 )
+        print(f'|{"Main Menu":^48}|')
+        print('-' *50 )
+        print(f'|{"     1. New Game":<48}|')
+        print(f'|{"     2. Game Rules":<48}|')
+        print(f'|{"     3. Class stats":<48}|')
+        print(f'|{"     0. Quit":<48}|')
+        print('-' *50 )
+        
+        opção= int(input('>> Digite uma opção: '))
 
-health: 100
-attack: 5
-stamina: 3
-''')
-    
-    if type=='gunslinger':
-        print('''
-You selected Gunslinger!
+        if opção == 0:
+            print('Finished')
+            break
 
-health: 100
-attack: 6
-stamina: 2
-''')
-    if type=='beast':
-        print('''
-You selected Beast!
 
-health: 200
-attack: 5
-stamina: 1
-''')
-    if type=='thunder':
-        print('''
-You selected the secret class!
+        elif opção == 1:
+            newgame()
+            playagain()
+            break
 
-Thunder King
 
-health: 200
-attack: 10
-stamina: 3
-''')
+        elif opção == 2:
+            rules()
+            input('>> Pressione ENTER para voltar')
+
+
+        elif opção == 3:
+            stats()
+            input('>> Pressione ENTER para voltar')   
+
+
+        else:
+            print('Selecione uma opção válida')
+
 
 def newgame():
     jogador= str(input('Player: '))
 
-    print(f'Greetings, {jogador}. Pick beetween one of the classes bellow to define your fight status')
+    print(f'Greetings, {jogador}. Pick beetween one of the classes bellow to define your fight stats')
     classpicked = int(input(''' 
-    [1] Fighter
-    [2] Mage
-    [3] Gunslinger
-    [4] Beast
-    >> '''))
+[1] Fighter
+[2] Mage
+[3] Gunslinger
+[4] Beast
+    
+>> '''))
 
-    if classpicked == 0:
-        classtats('thunder')
+    if classpicked == 1:
+       battle('fighter')
+    elif classpicked == 2:
+       battle('mage')
+    elif classpicked == 3:
+       battle('gunslinger')
+    elif classpicked == 4:
+       battle('beast')
+    elif classpicked == 0:
+       battle('thunder')
+
+
+def battle(type):
+   
+    if type == 'fighter':
+        power = 10
+        vitality = 150
+        stamina = 5
+    elif type == 'mage':
+        power = 5
+        vitality = 100
+        stamina = 10
+    elif type == 'gunslinger':
+        power = 6
+        vitality = 120
+        stamina = 7
+    elif type == 'beast':
+        power = 8
+        vitality = 200
+        stamina = 6
+    elif type == 'thunder':
+        power = 10
+        vitality = 200
+        stamina = 10
+
+
+    Boss = choice(BossList)
+    bosspower= 2
+    print(f'\nYou will face {Boss} in your battle.')
+
+
+    statpicked=int(input(''' 
+[1] - Power
+[2] - Vitality
+[3] - Stamina
+>>Choose your best stat: '''))
+    
+    if statpicked == 1 :
+        print('victory') if power>bosspower else print('defeat')
+        
+   
+    else:
+        print('Invalid option')
+
+
+
+       
 
 
 
