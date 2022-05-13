@@ -6,12 +6,68 @@ def rules():
     print('''
 *Instructions*
 
-Super trunfo''')
+Each class has different attributes.
+You will choose a class and fight a boss.
+
+You have to pick an stat higher than the boss's to win''')
 
 
 def stats():
     print('''
-    *STATS*''')
+*STATS*
+
+Fighter                           Mage
+
+power = 10                        power = 5
+
+vitality = 150                    vitality = 150
+
+stamina = 5                       stamina = 10
+
+
+Gunslinger                      Beast
+        
+power = 6                       power = 8
+vitality = 120                  vitality = 200
+stamina = 7                     stamina = 6
+
+Thunder King
+
+power = 10
+vitality = 200
+stamina = 10
+
+
+
+*Boss*
+
+
+Calanthir
+
+power = 10
+vitality = 200
+stamina = 10
+
+Eredin
+
+power = 10
+vitality = 200
+stamina = 10
+
+
+
+Geralt
+
+power = 10
+vitality = 200
+stamina = 10
+
+Vesemir
+
+power = 10
+vitality = 200
+stamina = 10
+''')
 
 
 def playagain():
@@ -125,9 +181,22 @@ def battle(type):
 
     BossList = ['Calanthir', 'Eredin','Geralt','Vesemir']
     Boss = choice(BossList)
-    bosspower= 2
-    bossvitality = 2
-    bossstamina = 2
+    if Boss =='Calanthir':
+        bosspower= 2
+        bossvitality = 2
+        bossstamina = 2
+    elif Boss=='Eredin':
+        bosspower= 2
+        bossvitality = 2
+        bossstamina = 2
+    elif Boss=='Geralt':
+        bosspower= 2
+        bossvitality = 2
+        bossstamina = 2
+    elif Boss=='Vesemir':
+        bosspower= 2
+        bossvitality = 2
+        bossstamina = 2
     
     print(f'\nYou will face {Boss} in your battle.')
 
