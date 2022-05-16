@@ -9,7 +9,7 @@ def rules():
 Each class has different attributes.
 You will choose a class and fight a boss.
 
-You have to pick an stat higher than the boss's to win''')
+You have to pick an stat higher than the boss's to win and you lose if you stat is lower. If its a draw you lose aswell''')
 
 
 def stats():
@@ -42,7 +42,7 @@ stamina = 10
 *Boss*
 
 
-Calanthir
+Caranthir
 
 power = 10
 vitality = 200
@@ -179,24 +179,24 @@ def battle(type):
         vitality = 200
         stamina = 10
 
-    BossList = ['Calanthir', 'Eredin','Geralt','Vesemir']
+    BossList = ['Caranthir', 'Eredin','Geralt','Vesemir']
     Boss = choice(BossList)
-    if Boss =='Calanthir':
-        bosspower= 2
-        bossvitality = 2
-        bossstamina = 2
+    if Boss =='Caranthir':
+        bosspower= 6
+        bossvitality = 5
+        bossstamina = 8
     elif Boss=='Eredin':
-        bosspower= 2
-        bossvitality = 2
-        bossstamina = 2
+        bosspower= 8
+        bossvitality = 9
+        bossstamina = 9
     elif Boss=='Geralt':
-        bosspower= 2
-        bossvitality = 2
-        bossstamina = 2
+        bosspower= 6
+        bossvitality = 5
+        bossstamina = 10
     elif Boss=='Vesemir':
-        bosspower= 2
-        bossvitality = 2
-        bossstamina = 2
+        bosspower= 6
+        bossvitality = 4
+        bossstamina = 3
     
     print(f'\nYou will face {Boss} in your battle.')
 
